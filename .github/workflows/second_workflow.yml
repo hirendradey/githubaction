@@ -1,0 +1,25 @@
+name: my second workflow
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+  
+jobs: 
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: build job
+        run: echo build done
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: test job
+        run: echo test done
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: deploy job
+        run: echo deployment done
